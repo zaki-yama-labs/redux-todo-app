@@ -1,18 +1,17 @@
-React Redux Template
---------------------
+Todo app with React & Redux
+---------------------------
 
-A starter kit for developing React/Redux application.
+A simple Todo app with React and Redux.
 
-Including:
+I've using the following technologies:
 
-- ES2015 (Babel)
-- React & Redux
-- ESLint
-- Webpack & Webpack Dev Server
+* React
+* Redux
+* webpack
+* Babel for ES2015
+* ESLint
 
 ### Usage
-
-Build your app under `src` directory, and run
 
 ```
 $ npm install
