@@ -9,9 +9,6 @@ export default class AddTodoForm extends React.Component {
     this.state = {
       input: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -36,8 +33,15 @@ export default class AddTodoForm extends React.Component {
     return (
       <div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <TextField id="todo-title" value={this.state.input} onChange={this.handleChange} />
-          <RaisedButton label="Add Todo" onTouchTap={this.handleSubmit} />
+          <TextField
+            id="todo-title"
+            value={this.state.input}
+            onChange={(e) => this.handleChange(e)}
+          />
+          <RaisedButton
+            label="Add Todo"
+            onTouchTap={(e) => this.handleSubmit(e)}
+          />
         </form>
       </div>
     );
