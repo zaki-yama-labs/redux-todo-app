@@ -36,10 +36,12 @@ export default class AddTodoForm extends React.Component {
           <TextField
             id="todo-title"
             value={this.state.input}
+            style={{ width: '70%' }}
             onChange={(e) => this.handleChange(e)}
           />
           <RaisedButton
             label="Add Todo"
+            style={{ width: '30%' }}
             onTouchTap={(e) => this.handleSubmit(e)}
           />
         </form>
