@@ -1,16 +1,17 @@
 import React, { PropTypes } from 'react';
+import Checkbox from 'material-ui/Checkbox';
+import { ListItem } from 'material-ui/List';
 
 export default class Todo extends React.Component {
   render() {
     return (
-      <li
-        onClick={this.props.onClick}
+      <ListItem
         style={{
           textDecoration: this.props.completed ? 'line-through' : 'none',
         }}
-      >
-        {this.props.text}
-      </li>
+        leftCheckbox={<Checkbox onCheck={this.props.onClick} />}
+        primaryText={this.props.text}
+      />
     );
   }
 }

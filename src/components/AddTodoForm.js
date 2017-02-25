@@ -1,25 +1,49 @@
 import React, { PropTypes } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 export default class AddTodoForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      input: '',
+    };
+  }
+
+  handleChange(e) {
+    this.setState({
+      input: e.target.value,
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const node = this.refs.input;
-    const text = node.value.trim();
+    const text = this.state.input.trim();
     if (!text) {
       return;
     }
     this.props.onSubmit(text);
-    node.value = '';
+    this.setState({
+      input: '',
+    });
   }
 
   render() {
     return (
       <div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input ref="input" />
-          <button type="submit">
-            Add Todo
-          </button>
+          <TextField
+            id="todo-title"
+            value={this.state.input}
+            style={{ width: '70%' }}
+            onChange={(e) => this.handleChange(e)}
+          />
+          <RaisedButton
+            label="Add Todo"
+            style={{ width: '30%' }}
+            onTouchTap={(e) => this.handleSubmit(e)}
+          />
         </form>
       </div>
     );

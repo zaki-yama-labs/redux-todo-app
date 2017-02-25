@@ -21,13 +21,17 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query:{
-          presets: ['react', 'es2015', 'react-hmre']
+          presets: ['react', 'es2015']
         }
       },
       {
         test: /\.html$/,
         loader: 'file?name=[path][name].[ext]'
-      }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+      },
     ]
   }
   // http://webpack.github.io/docs/configuration.html#resolve-extensions
