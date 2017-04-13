@@ -1,16 +1,16 @@
+const path = require('path');
+
 module.exports = {
-  context: __dirname + '/src',
-  entry: {
-    javascript: './index.js',
-    html: './index.html'
-  },
+  context: path.resolve(__dirname, './src'),
+  entry: './index.js',
   output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/assets',
   },
   // Configuration for dev server
   devServer: {
-    contentBase: 'dist',
+    contentBase: path.resolve(__dirname, './src'),
     port: 3000,
   },
   devtool: 'inline-source-map',
