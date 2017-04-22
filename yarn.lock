@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@salesforce-ux/design-system@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.2.2.tgz#acf3fc1f9588555f995a2fda2f2cf51ea965c527"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
