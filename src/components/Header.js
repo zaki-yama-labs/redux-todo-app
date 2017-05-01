@@ -1,7 +1,13 @@
-import React from 'react';
-import { Icon } from 'react-lightning-design-system';
+import React, { PropTypes } from 'react';
+import { Button, Icon } from 'react-lightning-design-system';
 
 export default class Header extends React.Component {
+  static get propTypes() {
+    return {
+      onClickNew: PropTypes.func.isRequired,
+    };
+  }
+
   render() {
     return (
       <div className="slds-page-header" role="banner">
@@ -14,25 +20,23 @@ export default class Header extends React.Component {
                   <Icon
                     category="standard"
                     size="medium"
-                    icon="contact"
-                    textColor={undefined}
-                    fillColor={undefined}
-                    container={undefined}
+                    icon="task"
                   />
-                </svg></span>
+                </svg>
+                </span>
               </div>
 
               <div className="slds-media__body">
                 <p className="slds-text-heading--label">Contacts</p>
-                <h1 className="slds-text-heading--medium">My Contacts</h1>
+                <h1 className="slds-text-heading--medium">My Tasks</h1>
               </div>
             </div>
           </div>
 
-          <div id="newContact" className="slds-col slds-no-flex slds-align-middle">
-            <button className="slds-button slds-button--neutral">
-              New Contact
-            </button>
+          <div id="newTask" className="slds-col slds-no-flex slds-align-middle">
+            <Button type="neutral" onClick={this.props.onClickNew}>
+              New Task
+            </Button>
           </div>
         </div>
       </div>
