@@ -1,12 +1,14 @@
 import React from 'react';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
-import FilterLinkList from '../components/FilterLinkList';
+import Header from './Header';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
+import FilterLinkList from './FilterLinkList';
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <AddTodo />
         <VisibleTodoList />
         <FilterLinkList />
